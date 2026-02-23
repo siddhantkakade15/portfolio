@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Siddhant Kakade | Portfolio</title>
+
+    <style>
+        /* ===== CUSTOM COLOR THEME ===== */
+        :root {
+            --primary: #0A192F;        /* Dark Navy */
+            --secondary: #112240;      /* Slightly lighter navy */
+            --accent: #64FFDA;         /* Teal Accent */
+            --text-light: #CCD6F6;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background-color: var(--secondary);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--accent);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 60px 40px;
+            border-bottom: 1px solid #233554;
+        }
+
+        h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .skill-box {
+            background-color: var(--secondary);
+            padding: 15px 25px;
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: var(--secondary);
+            padding: 20px;
+            width: 280px;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--white);
+        }
+
+        /* ===== CONTACT FORM ===== */
+        form {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            background-color: var(--accent);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #52d4b7;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .success {
+            color: var(--accent);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* ===== FEEDBACK DISPLAY ===== */
+        .feedback-box {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--secondary);
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secondary);
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>Siddhant Kakade</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Siddhant Kakade, a passionate web development student who enjoys
+            building interactive and visually appealing websites. I love learning new 
+            technologies and solving real-world problems using code.
+        </p>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">HTML5</div>
+            <div class="skill-box">CSS3 & Flexbox</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">JAVA</div>
+            <div class="skill-box">Basic Python</div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+
+        <div class="project-card">
+            <h3>Smart To-Do List</h3>
+            <p>
+                A task management web application that allows users to 
+                add, delete, and mark tasks as completed. 
+                The data is stored using local storage for persistence.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Medicine Reminder System Application</h3>
+            <p>
+                A healthcare-based reminder system that helps users 
+                schedule their medicines and receive timely reminders.
+                The system stores medication details, dosage time,
+                and alerts users to take medicines on schedule.
+            </p>
+              </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <h2>Contact / Feedback</h2>
+
+        <form id="feedbackForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <span class="error" id="nameError"></span>
+
+            <input type="email" id="email" placeholder="Your Email">
+            <span class="error" id="emailError"></span>
+
+            <textarea id="message" placeholder="Your Feedback"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <div class="success" id="successMessage"></div>
+
+        <div class="feedback-box">
+            <h3>Submitted Feedback:</h3>
+            <ul id="feedbackList"></ul>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        © 2026 Siddhant Kakade | All Rights Reserved
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        const form = document.getElementById("feedbackForm");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        const nameError = document.getElementById("nameError");
+        const emailError = document.getElementById("emailError");
+        const successMessage = document.getElementById("successMessage");
+        const feedbackList = document.getElementById("feedbackList");
+
+        // Load existing feedback from local storage
+        window.onload = function() {
+            const savedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
+            savedFeedback.forEach(addFeedbackToPage);
+        };
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            successMessage.textContent = "";
+
+            let valid = true;
+
+            if (nameInput.value.trim() === "") {
+                nameError.textContent = "Name cannot be empty.";
+                valid = false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailInput.value.match(emailPattern)) {
+                emailError.textContent = "Enter a valid email.";
+                valid = false;
+            }
+
+            if (valid) {
+                const feedbackData = {
+                    name: nameInput.value,
+                    email: emailInput.value,
+                    message: messageInput.value
+                };
+
+                let feedbackArray = JSON.parse(localStorage.getItem("feedback")) || [];
+                feedbackArray.push(feedbackData);
+                localStorage.setItem("feedback", JSON.stringify(feedbackArray));
+
+                addFeedbackToPage(feedbackData);
+
+                successMessage.textContent = "Thank you! Your feedback has been submitted.";
+
+                form.reset();
+            }
+        });
+
+        function addFeedbackToPage(data) {
+            const li = document.createElement("li");
+            li.textContent = data.name + " (" + data.email + "): " + data.message;
+            feedbackList.appendChild(li);
+        }
+    </script>
+
+</body>
+</html>
